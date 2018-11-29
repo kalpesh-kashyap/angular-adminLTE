@@ -4,7 +4,8 @@ import {NgModule} from '@angular/core';
 import {UsersListComponent} from './users/users-list/users-list.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'users', component: UsersListComponent}
 ];
 
