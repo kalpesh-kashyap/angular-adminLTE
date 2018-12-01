@@ -6,7 +6,9 @@ import {Component} from '@angular/core';
     <div class="wrapper">
       <app-header></app-header>
       <app-sidebar></app-sidebar>
-      <ng-content select=".content-wrapper"></ng-content>
+      <div class="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
       <app-footer></app-footer>
     </div>`
 })
