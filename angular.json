@@ -37,7 +37,7 @@
               "src/assets/js/adminlte.js",
               "node_modules/jquery-sparkline/jquery.sparkline.js",
               "node_modules/jquery-slimscroll/jquery.slimscroll.js",
-              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/chart.js/Chart.js",
               "src/assets/js/pages/dashboard2.js",
               "src/assets/js/demo.js"
             ]
