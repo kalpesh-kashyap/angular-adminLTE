@@ -1,61 +1,102 @@
-<!-- general form elements disabled -->
 <div class="box box-warning">
   <!--<div class="box-header with-border">-->
   <!--<h3 class="box-title">General Elements</h3>-->
   <!--</div>-->
-  <!-- /.box-header -->
   <div class="box-body">
-    <form role="form">
-      <!-- text input -->
-      <div class="form-group">
-        <label>First Name</label>
-        <input type="text" class="form-control" placeholder="Enter ...">
+    <form [formGroup]="form" (ngSubmit)="saveUser(form.value)">
+      <div formGroupName="name">
+        <div class="form-group"
+             [ngClass]="{'has-error':form.get('name.firstName').dirty && form.get('name.firstName').invalid}">
+          <label>First Name</label>
+          <input type="text" class="form-control" placeholder="Enter ..."
+                 formControlName="firstName">
+          <span *ngIf="form.get('name.firstName').dirty && form.get('name.firstName').invalid" class="help-block">
+            <span *ngIf="form.get('name.firstName').errors.required">First name is required</span>
+            <span *ngIf="form.get('name.firstName').errors.maxlength">First name must me less then 10 characters</span>
+            <span *ngIf="form.get('name.firstName').errors.pattern">Characters only</span>
+          </span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': form.get('name.lastName').dirty &&
+        form.get('name.lastName').invalid}">
+          <label>Last Name</label>
+          <input type="text" class="form-control" placeholder="Enter ..."
+                 formControlName="lastName">
+          <span *ngIf="form.get('name.lastName').dirty && form.get('name.lastName').invalid" class="help-block">
+            <span *ngIf="form.get('name.lastName').errors.required">Last name is required</span>
+            <span *ngIf="form.get('name.lastName').errors.maxlength">Last name must me less then 10 characters</span>
+            <span *ngIf="form.get('name.lastName').errors.pattern">Characters only</span>
+          </span>
+        </div>
       </div>
       <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" class="form-control" placeholder="Enter ...">
+        <label>Date of Birth</label>
+        <input type="text" class="form-control" bsDatepicker placeholder="Enter ..."
+               formControlName="dob">
       </div>
-      <div class="form-group">
+      <div class="form-group" [ngClass]="{'has-error':form.get('email').dirty &&
+      form.get('email').invalid}">
         <label>Email</label>
-        <input type="text" class="form-control" placeholder="Enter ...">
+        <input type="text" class="form-control" placeholder="Enter ..."
+               formControlName="email">
+        <span *ngIf="form.get('email').dirty && form.get('email').invalid" class="help-block">
+            <span *ngIf="form.get('email').errors.required">Email is required</span>
+            <span *ngIf="form.get('email').errors.pattern">Invalid email</span>
+        </span>
       </div>
-      <div class="form-group">
+      <div class="form-group" [ngClass]="{'has-error':form.get('mobileNumber').dirty &&
+      form.get('mobileNumber').invalid}">
         <label>Mobile Number</label>
-        <input type="text" class="form-control" placeholder="Enter ...">
+        <input type="text" class="form-control" placeholder="Enter ..."
+               formControlName="mobileNumber">
+        <span *ngIf="form.get('mobileNumber').dirty && form.get('mobileNumber').invalid" class="help-block">
+            <span *ngIf="form.get('mobileNumber').errors.required">Mobile number is required</span>
+            <span *ngIf="form.get('mobileNumber').errors.pattern">Invalid email</span>
+            <span *ngIf="form.get('mobileNumber').errors.minlength || form.get('mobileNumber').errors.maxlength">Number must be 10 number</span>
+        </span>
       </div>
       <div class="form-group">
         <label>Gender</label>
         <div class="form-group">
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              <input type="radio" name="gender" id="optionsRadios1" value="male"
+                     formControlName="gender">
               Male
             </label>
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" name="gender" id="optionsRadios2" value="female"
+                     formControlName="gender">
               Female
             </label>
           </div>
         </div>
       </div>
-      <!-- textarea -->
-      <div class="form-group">
-        <label>Address</label>
-        <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-      </div>
-      <div class="form-group">
-        <label>Select</label>
-        <select class="form-control">
-          <option>option 1</option>
-          <option>option 2</option>
-          <option>option 3</option>
-          <option>option 4</option>
-          <option>option 5</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>City</label>
-        <input type="text" class="form-control" placeholder="Enter ...">
+      <div formGroupName="contact">
+        <div class="form-group">
+          <label>Address</label>
+          <textarea class="form-control" rows="3" placeholder="Enter ..."
+                    formControlName="address"></textarea>
+        </div>
+        <div class="form-group">
+          <label>State</label>
+          <select class="form-control"
+                  formControlName="state">
+            <option>option 1</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+            <option>option 5</option>
+          </select>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error':form.get('contact.city').dirty &&
+      form.get('contact.city').invalid}">
+          <label>City</label>
+          <input type="text" class="form-control" placeholder="Enter ..."
+                 formControlName="city">
+          <span *ngIf="form.get('contact.city').dirty && form.get('contact.city').invalid" class="help-block">
+            <span *ngIf="form.get('contact.city').errors.pattern">Characters only</span>
+        </span>
+        </div>
       </div>
 
       <!-- input states -->
@@ -82,12 +123,12 @@
       <!--</div>-->
       <div class="checkbox">
         <label>
-          <input type="checkbox">
+          <input type="checkbox" formControlName="isActive">
           Active
         </label>
       </div>
       <div class="box-footer text-right">
-        <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>&nbsp;
         <button type="submit" class="btn btn-danger">Reset</button>
       </div>
     </form>

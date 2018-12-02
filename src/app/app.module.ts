@@ -6,6 +6,7 @@ import {LayoutsModule} from './layouts/layouts.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {RoutersModule} from './routers.module';
 import {LoginComponent} from './auth/login/login.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {LoginComponent} from './auth/login/login.component';
     BrowserModule,
     RoutersModule,
     LayoutsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

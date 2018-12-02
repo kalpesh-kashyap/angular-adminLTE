@@ -23,23 +23,24 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.css",
-              "node_modules/font-awesome/css/font-awesome.css",
-              "node_modules/ionicons/dist/css/ionicons.min.css",
-              "src/assets/css/AdminLTE.css",
-              "src/assets/css/skins/_all-skins.css",
-              "src/styles.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/ionicons/dist/css/ionicons.min.css",
+              "./src/assets/css/AdminLTE.css",
+              "./src/assets/css/skins/_all-skins.css",
+              "./src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/fastclick/lib/fastclick.js",
-              "src/assets/js/adminlte.js",
-              "node_modules/jquery-sparkline/jquery.sparkline.js",
-              "node_modules/jquery-slimscroll/jquery.slimscroll.js",
-              "node_modules/chart.js/Chart.js",
-              "src/assets/js/pages/dashboard2.js",
-              "src/assets/js/demo.js"
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/fastclick/lib/fastclick.js",
+              "./src/assets/js/adminlte.js",
+              "./node_modules/jquery-sparkline/jquery.sparkline.js",
+              "./node_modules/jquery-slimscroll/jquery.slimscroll.js",
+              "./node_modules/chart.js/Chart.js",
+              "./src/assets/js/pages/dashboard2.js",
+              "./src/assets/js/demo.js"
             ]
           },
           "configurations": {
@@ -94,6 +95,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": [],

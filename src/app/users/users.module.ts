@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {UserFormComponent} from './user-form/user-form.component';
 import {UsersRoutesModule} from './users.routes.module';
 import {UsersListComponent} from './users-list/users-list.component';
+import {BsDatepickerModule} from 'ngx-bootstrap';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import {UsersListComponent} from './users-list/users-list.component';
   ],
   imports: [
     CommonModule,
-    UsersRoutesModule
+    UsersRoutesModule,
+    BsDatepickerModule.forRoot(),
+    ReactiveFormsModule
   ],
   exports: []
 })
